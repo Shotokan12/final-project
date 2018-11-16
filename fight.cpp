@@ -54,7 +54,7 @@ class Fight{
             hit1 = hit1 + (hp1*3);
             hit1 = hit1 * 0.05050505;
         };
-        if(hitclass == "Range"){
+        if(hitclass == "Ranger"){
             ran1 = 87;
             ran1 = ran1 + ((rand()%6)+1);
             ran1 = ran1 + ((rand()%6)+1);
@@ -100,11 +100,11 @@ class Fight{
             hp2 = hp2 + ((rand()%6)+1);
             hp2 = hp2 + ((rand()%6)+1);
             
-            fri2 = (str2+att2+def2);
-            fri2 = fri2 +(hp2*3);
-            fri2 = fri2*(0.05050505);
+            fri1 = (str2+att2+def2);
+            fri1 = fri1 +(hp2*3);
+            fri1 = fri1*(0.05050505);
         };
-        if(friclass == "Range"){
+        if(friclass == "Ranger"){
             ran2 = 87;
             ran2 = ran2 + ((rand()%6)+1);
             ran2 = ran2 + ((rand()%6)+1);
@@ -114,12 +114,10 @@ class Fight{
             hp2 = 87;
             hp2 = hp2 + ((rand()%6)+1);
             hp2 = hp2 + ((rand()%6)+1);
-            
-            
-            fri2 = ((ran2)+(def2*2)+(hp2*3)*(0.05050505));
-            fri2 = fri2
-            fri2 = fri2
-            fri2 = fri2
+            fri2 = (ran2);
+            fri2 = fri2+(def2*2);
+            fri2 = fri2+(hp2*3);
+            fri2 = fri2*(0.05050505);
         };
         if(friclass == "Magic"){
             mag2 = 87;
@@ -133,18 +131,25 @@ class Fight{
             hp2 = hp2 + ((rand()%6)+1);
             
             
-            fri3 = ((mag2)+(def2*2)+(hp2*3)*(0.05050505));
+          
+            fri3 = (mag2);
+            fri3 = fri3+(def2*2);
+            fri3 = fri3+(hp2*3);
+            fri3 = fri3*(0.05050505);
         };
       
         
         if(hitclass == "Melee"){
             hitfinal = hit1;
+            
         };
         if(hitclass == "Magic"){
             hitfinal = hit2;
+            
         };
-        if(hitclass == "Range"){
+        if(hitclass == "Ranger"){
             hitfinal = hit3;
+            
         };
         if(friclass == "Melee"){
             frifinal = fri1;
@@ -152,16 +157,17 @@ class Fight{
         if(friclass == "Magic"){
             frifinal = fri2;
         };
-        if(friclass == "Range"){
+        if(friclass == "Ranger"){
             frifinal = fri3;
         };
         
         cout << "First person has a max hit of "<< hitfinal << endl;
         cout << "Second person has a max hit of "<< frifinal << endl;
         
-        cout << "Stats of first person" << str1 <<" || "<< att1 <<" || "<< def1 <<" || "<< ran1 <<" || "<< mag1 <<" || "<< hp1 << endl;
-        cout << "Stats of Second person" << str2 <<" || "<< att2 <<" || "<< def2 <<" || "<< ran2 <<" || "<< mag2 <<" || "<< hp2 << endl;
-       
+        cout << "Stats of first person " << str1 <<" || "<< att1 <<" || "<< def1 <<" || "<< ran1 <<" || "<< mag1 <<" || "<< hp1 << endl;
+        cout << "Stats of Second person " << str2 <<" || "<< att2 <<" || "<< def2 <<" || "<< ran2 <<" || "<< mag2 <<" || "<< hp2 << endl;
+        cout << "Time to Fight!" << endl;
+        cout << "========================================" << endl;
         
         
         
