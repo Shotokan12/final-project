@@ -5,7 +5,7 @@
 #include "fight.cpp"
 #include <stdlib.h>     
 #include <time.h> 
-using namespace std;
+
 
     string mhitclass = "N/A";
     string mfriclass = "N/A";
@@ -37,7 +37,7 @@ int main()
   
   
   
-  
+
   
   
   // EXAMPLE SECTION BELOW JUST IGNORE FOR REFERENCE ONLY
