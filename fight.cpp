@@ -127,7 +127,7 @@ class Fight{
         
         while(stop != 0){
          
-            if(stopattacks <= 0){
+            if(stopattacks > 0){
             hitcal1 =  ((rand()%hitfinalcal)+1);
             hitcal1 = hitcal1 / 1000;
             activehp2 = activehp2 - hitcal1;
@@ -140,13 +140,12 @@ class Fight{
             }
             
             cin >> toggleh;
-            
-            if(stopattacks <= 0){
+            if(stopattacks > 0){
             if(toggleh == '!'){
             hitcal2 = ((rand()%frifinalcal)+1);
             hitcal2 = hitcal2 / 1000;
             activehp1 = activehp1 - hitcal2;
-            cout << friclass << " Hits you with a [ " << hitcal2 << " ] Their hitpoints are now at [ " << activehp1 << " ]"<< endl;
+            cout << friclass << " Hits them with a [ " << hitcal2 << " ] Their hitpoints are now at [ " << activehp1 << " ]"<< endl;
             toggleh = 'b';   
             }
             if(activehp1 <= 0){
@@ -154,15 +153,16 @@ class Fight{
                 stop = 0;
             }
             }
-         
-    };
+        }
         
- 
+        //while section end
+       
         
-    
-    
-    
-    
-    
+    }
     
 };
+        
+    
+    
+    
+    
