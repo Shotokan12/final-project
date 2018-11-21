@@ -3,6 +3,7 @@
 #include "hitman.cpp"
 #include "friend.cpp"
 #include "fight.cpp"
+#include "endgame.cpp"
 #include <stdlib.h>     
 #include <time.h> 
 
@@ -34,6 +35,14 @@ int main()
     obj4.friclass = obj3.typeout;
     
     obj4.combatscript();
+    
+    Endgame obj5;
+    obj5.nhitman = obj2.typeout;
+    obj5.nfriend = obj3.typeout;
+    obj5.nhitmanhp = obj4.activehp1;
+    obj5.nfriendhp = obj4.activehp2;
+    
+    obj5.endcomments();
   
   
   
