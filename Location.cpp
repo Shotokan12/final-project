@@ -3,44 +3,166 @@
 #include <time.h> 
 using namespace std;
 
-
-
-class Location{
+class Fight{
     public:
-    string loc1 = "Guam";
-    string loc2 = "Japan";
-    string loc3 = "Canada";
-    string loc4 = "Paris";
-    char start = '!';
-    int index = 0;
-    string outlocation = "N/A";
     
-    void locchoice(){
-        srand(time(NULL));
-        cout << "Your Location will be selected at random. Type in ! to begin" << endl;
-        cin >> start;
-        if(start = '!'){
-            cout << "*Places hand in bag with random names. Pulls out a slip of paper." << endl;
-            index = (rand()%4)+1;
-            switch (index) {
-            case 1: cout << "Congradulations you are going to " << loc1 << "." << endl;
-            outlocation = loc1;
-            break;
-            case 2:  cout << "Congradulations you are going to " << loc2 << "." << endl;
-            outlocation = loc2;
-            break;
-            case 3:  cout << "Congradulations you are going to " << loc3 << "." << endl;
-            outlocation = loc3;
-            break;
-            case 4:  cout << "Congradulations you are going to " << loc4 << "." << endl;
-            outlocation = loc4;
-            break;
-             };
-        };
+    string hitclass = "N/A";
+    string friclass = "N/A";
+    string fightlocation = "N/A";
+    double hit1 = 0;
+    double hit2 = 0;
+    double hit3 = 0;
+    double fri1 = 0;
+    double fri2 = 0;
+    double fri3 = 0;
+   
+    
+    //Stats hitman
+    int str1 = 0;
+    int att1 = 0;
+    int def1 = 0;
+    int ran1 = 0;
+    int mag1 = 0;
+    int hp1 = 0;
+    //Stats of friend
+    int str2 = 0;
+    int att2 = 0;
+    int def2 = 0;
+    int ran2 = 0;
+    int mag2 = 0;
+    int hp2 = 0;
+    
+    //active fight information
+     double hitfinal = 0;
+    double frifinal = 0;
+    
+    double activehp1 = 0;
+    double activehp2 = 0;
+    
+    double hitcal1 = 0;
+    double hitcal2 = 0;
+    char toggleh = 'b';
+    
+    void combatscript(){
+        (srand(time(NULL)));
+        //first class calculated
+        
+            str1 = 87;
+            str1 = str1 + ((rand()%6)+1);
+            str1 = str1 + ((rand()%6)+1);
+            att1 = 87;
+            att1 = att1 + ((rand()%6)+1);
+            att1 = att1 + ((rand()%6)+1);
+            def1 = 87;
+            def1 = def1 + ((rand()%6)+1);
+            def1 = def1 + ((rand()%6)+1);
+            hp1 = 87;
+            hp1 = hp1 + ((rand()%6)+1);
+            hp1 = hp1 + ((rand()%6)+1);
+            
+            hit1 = (str1+att1+def1);
+            hit1 = hit1 + (hp1*3);
+            hit1 = hit1 * 0.05050505;
+       
+        //secound class calculated
+       
+           str2 = 87;
+            str2 = str2 + ((rand()%6)+1);
+            str2 = str2 + ((rand()%6)+1);
+            att2 = 87;
+            att2 = att2 + ((rand()%6)+1);
+            att2 = att2 + ((rand()%6)+1);
+            def2 = 87;
+            def2 = def2 + ((rand()%6)+1);
+            def2 = def2 + ((rand()%6)+1);
+            hp2 = 87;
+            hp2 = hp2 + ((rand()%6)+1);
+            hp2 = hp2 + ((rand()%6)+1);
+            
+            fri1 = (str2+att2+def2);
+            fri1 = fri1 +(hp2*3);
+            fri1 = fri1*(0.05050505);
+        
        
         
+        hitfinal = hit1;
+        frifinal = fri1;
         
         
+     
+        
+        cout << "First person has a max hit of "<< hitfinal << endl;
+        cout << "Second person has a max hit of "<< frifinal << endl;
+        
+        cout << "Stats of first person " << str1 <<" || "<< att1 <<" || "<< def1 <<" || "<< ran1 <<" || "<< mag1 <<" || "<< hp1 << endl;
+        cout << "Stats of Second person " << str2 <<" || "<< att2 <<" || "<< def2 <<" || "<< ran2 <<" || "<< mag2 <<" || "<< hp2 << endl;
+        cout << "Time to Fight!" << endl;
+        cout << "========================================" << endl;
+        cout << "Fighter information:" << endl;
+        cout << "Hitman Stats: [" << hitclass << "]" << endl;
+        cout << "Max hit: " << hitfinal << endl;
+        cout << "Combat levels. Attack: " << att1 << " Strenght: " << str1 << " Defence: " << def1 << " Hitpoints: "<< hp1 << endl;
+        cout << "========================================" << endl;
+        cout << "Fighter information:" << endl;
+        cout << "Hitman Stats: [" << friclass << "]" << endl;
+        cout << "Max hit: " << frifinal << endl;
+        cout << "Combat levels. Attack: " << att2 << " Strenght: " << str2 << " Defence: " << def2 << " Hitpoints: "<< hp2 << endl;
+        cout << "========================================" << endl;
+        activehp1 = hp1;
+        activehp2 = hp2;
+        
+        cout << "Enter ! to hit!" << endl;
+        cout << hitclass << " gets the first hit!" << endl;
+        
+        int hitfinalcal = 0;
+        hitfinalcal = hitfinal * 1000;
+        
+        int frifinalcal = 0;
+        frifinalcal = frifinal * 1000;
+        
+        
+        
+        int stop = 1;
+        int stopattacks = 1;
+        
+        while(stop != 0){
+         
+            if(stopattacks > 0){
+            hitcal1 =  ((rand()%hitfinalcal)+1);
+            hitcal1 = hitcal1 / 1000;
+            activehp2 = activehp2 - hitcal1;
+            cout << hitclass << " Hits you with a [ " << hitcal1 << " ] Your hitpoints are now at [ " << activehp2 << " ]"<< endl;
+            if(activehp2 <= 0){
+                stopattacks = 0;
+                stop = 0;
+            }
+                
+            }
+            
+            cin >> toggleh;
+            if(stopattacks > 0){
+            if(toggleh == '!'){
+            hitcal2 = ((rand()%frifinalcal)+1);
+            hitcal2 = hitcal2 / 1000;
+            activehp1 = activehp1 - hitcal2;
+            cout << friclass << " Hits them with a [ " << hitcal2 << " ] Their hitpoints are now at [ " << activehp1 << " ]"<< endl;
+            toggleh = 'b';   
+            }
+            if(activehp1 <= 0){
+                stopattacks = 0;
+                stop = 0;
+            }
+            }
+        }
+        
+        //while section end
        
+        
     }
+    
 };
+        
+    
+    
+    
+    
