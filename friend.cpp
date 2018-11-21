@@ -2,38 +2,49 @@
 #include <stdlib.h>     
 #include <time.h> 
 using namespace std;
-//this is the friend class
-class Friend{
+
+//this is the location class 
+
+class Location{
     public:
-    //this are the options that you have to choose from in the friend class
-    string fname1 = "Andrew";
-    string fname2 = "Spike";
-    string fname3 = "Tyler";
-    int input = 0;
-    string typeout = "N/A";
-    //this is the function within the friends class
-    void friendtype(){
-        cout << "Please select your Friend!" << endl;
-        cout << "[1]Andrew\n[2]Spike\n[3]Tyler" << endl;
-        //this lets you select which friend to choose from
-        cin >> input;
-        //this is the switch that chooses options from the list
-        switch(input){
-            case 1: cout << "You selected " << fname1 << " as your friend." << endl;
-            typeout = fname1;
+    
+    //this is a list of location that you can choose from 
+    string loc1 = "Guam";
+    string loc2 = "Japan";
+    string loc3 = "Canada";
+    string loc4 = "Paris";
+    char start = '!';
+    int index = 0;
+    string outlocation = "N/A";
+    //this is the location function
+    void locchoice(){
+        //srand sets a random number so the location is completly random
+        srand(time(NULL));
+        cout << "Your Location will be selected at random. Type in ! to begin" << endl;
+        cin >> start;
+        //this is a switch so it can choose from a list which location that you want
+        if(start = '!'){
+            cout << "*Places hand in bag with random names. Pulls out a slip of paper." << endl;
+            index = (rand()%4)+1;
+            switch (index) {
+            case 1: cout << "Congradulations you are going to " << loc1 << "." << endl;
+            outlocation = loc1;
             break;
-            case 2: cout << "You selected " << fname2 << " as your friend." << endl;
-            typeout = fname2;
+            case 2:  cout << "Congradulations you are going to " << loc2 << "." << endl;
+            outlocation = loc2;
             break;
-            case 3: cout << "You selected " << fname3 << " as your friend." << endl;
-            typeout = fname3;
+            case 3:  cout << "Congradulations you are going to " << loc3 << "." << endl;
+            outlocation = loc3;
             break;
-        }
+            case 4:  cout << "Congradulations you are going to " << loc4 << "." << endl;
+            outlocation = loc4;
+            break;
+             };
+        };
+       
         
         
         
-        
-        
-        
-    }; 
+       
+    }
 };
