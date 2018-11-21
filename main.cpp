@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Location.cpp"
 #include "hitman.cpp"
@@ -24,8 +23,8 @@ int main()
     Hitman obj2;
     obj2.hitmantype();
     mhitclass = obj2.typeout;
-    
-    Friend obj3;
+   
+   Friend obj3;
     obj3.friendtype();
     mfriclass = obj3.typeout;
     
@@ -35,7 +34,6 @@ int main()
     obj4.friclass = obj3.typeout;
     
     obj4.combatscript();
- 
   
   
   
