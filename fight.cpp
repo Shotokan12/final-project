@@ -3,9 +3,11 @@
 #include <time.h> 
 using namespace std;
 
+
+//This is the fight class
 class Fight{
     public:
-    
+    //these are all the variabls included into the fight class
     string hitclass = "N/A";
     string friclass = "N/A";
     string fightlocation = "N/A";
@@ -45,7 +47,7 @@ class Fight{
     
     void combatscript(){
         (srand(time(NULL)));
-        //first class calculated
+        //first persons stats calculated
         
             str1 = 87;
             str1 = str1 + ((rand()%6)+1);
@@ -64,7 +66,7 @@ class Fight{
             hit1 = hit1 + (hp1*3);
             hit1 = hit1 * 0.05050505;
        
-        //secound class calculated
+        //secound persons stats calculated
        
            str2 = 87;
             str2 = str2 + ((rand()%6)+1);
@@ -84,12 +86,14 @@ class Fight{
             fri1 = fri1*(0.05050505);
         
        
-        
+        //these hold the max hit from each person
+        //max his is the maximum amount of damage they can deal
         hitfinal = hit1;
         frifinal = fri1;
         
         
-     
+     //this mostly explains it self its couting all the stats so you can see
+     //each persons stats levels and other information related to that person
         
         cout << "First person has a max hit of "<< hitfinal << endl;
         cout << "Second person has a max hit of "<< frifinal << endl;
@@ -108,11 +112,14 @@ class Fight{
         cout << "Max hit: " << frifinal << endl;
         cout << "Combat levels. Attack: " << att2 << " Strenght: " << str2 << " Defence: " << def2 << " Hitpoints: "<< hp2 << endl;
         cout << "========================================" << endl;
+       //active hp is relating to active combat so when someone dies the functions stops
         activehp1 = hp1;
         activehp2 = hp2;
         
         cout << "Enter ! to hit!" << endl;
         cout << hitclass << " gets the first hit!" << endl;
+        
+        //these two are calculating the hits during the fight
         
         int hitfinalcal = 0;
         hitfinalcal = hitfinal * 1000;
@@ -120,11 +127,11 @@ class Fight{
         int frifinalcal = 0;
         frifinalcal = frifinal * 1000;
         
-        
+        //these two stop the script if the fight ends
         
         int stop = 1;
         int stopattacks = 1;
-        
+        //this is the active fight between the two fighters
         while(stop != 0){
          
             if(stopattacks > 0){
