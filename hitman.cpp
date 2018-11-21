@@ -5,25 +5,25 @@ using namespace std;
 
 class Hitman{
     public:
-    string type1 = "Melee";
-    string type2 = "Ranger";
-    string type3 = "Magic";
+    string hname1 = "Ryan";
+    string hname2 = "Alex";
+    string hname3 = "Mark";
     int input = 0;
     string typeout = "N/A";
     
     void hitmantype(){
-        cout << "Time to set a hitman class. Choose from the current selection." << endl;
-        cout << "[1]Melee\n[2]Range\n[3]Magic" << endl;
+        cout << "Please select your hitman!" << endl;
+        cout << "[1]Ryan\n[2]Alex\n[3]Mark" << endl;
         cin >> input;
         switch(input){
-            case 1: cout << "You selected the " << type1 << " class." << endl;
-            typeout = type1;
+            case 1: cout << "You selected " << hname1 << " as the hitman." << endl;
+            typeout = hname1;
             break;
-            case 2: cout << "You selected the " << type2 << " class." << endl;
-            typeout = type2;
+            case 2: cout << "You selected " << hname2 << " as the hitman." << endl;
+            typeout = hname2;
             break;
-            case 3: cout << "You selected the " << type3 << " class." << endl;
-            typeout = type3;
+            case 3: cout << "You selected " << hname3 << " as the hitman." << endl;
+            typeout = hname3;
             break;
         }
         
