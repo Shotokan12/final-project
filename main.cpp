@@ -4,19 +4,19 @@
 #include "friend.cpp"
 #include "fight.cpp"
 #include "endgame.cpp"
-#include <stdlib.h>     
-#include <time.h> 
-
+#include <stdlib.h>    
+#include <time.h>
+ 
 //These are storage strings so i can cross use stuff and just reference it from the main
     string mhitclass = "N/A";
     string mfriclass = "N/A";
-    string mfightlocation = "N/A";
-
+    string mfightlocation = "N/A"; //why NA? =Vf
+ 
 //this is the main class
 int main()
 {
     cout << "Hello and welcome to Mikes Farms! Lets begin our Journy." << endl;
-    
+   
     //this starts the location function and then copys the out into the string in the main class
     Location obj1;
     obj1.locchoice();
@@ -43,19 +43,22 @@ int main()
     obj5.nfriend = obj3.typeout;
     obj5.nhitmanhp = obj4.activehp1;
     obj5.nfriendhp = obj4.activehp2;
-    
+   
     //Starts the results function
     obj5.endcomments();
-  
-  
-  
-
-  
-  
+ 
+ 
+ 
+ 
+ 
+ 
   // EXAMPLE SECTION BELOW JUST IGNORE FOR REFERENCE ONLY
   //  srand(time(NULL));
   //   int number = (rand()%10)+1;
   //   cout << number;
-
+ 
     return 0;
 }
+ 
+//very cool =) JT
+//Awesome and very detailed code= Vf
